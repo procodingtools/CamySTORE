@@ -67,23 +67,16 @@ class _HomeScreenState extends State<HomeScreen>{
         key: _scaffoldKey,
         body: Stack(
           children: <Widget>[
-            Positioned.fill(
-                child: Opacity(
-                    opacity: .0,
-                    child: Image.asset("assets/accountup.png"))),
             Positioned.fill(child: SafeArea(
-              child: Opacity(
-                opacity: 1,
-                child: Container(
-                  child: Navigator(onGenerateRoute: (settings) {
-                    return MaterialPageRoute(builder: (context) {
-                      //_queue.addLast(context);
-                      _context = context;
-                      Tools.context = context;
-                      return HomePage();
-                    });
-                  }),
-                ),
+              child: Container(
+                child: Navigator(onGenerateRoute: (settings) {
+                  return MaterialPageRoute(builder: (context) {
+                    //_queue.addLast(context);
+                    _context = context;
+                    Tools.context = context;
+                    return HomePage();
+                  });
+                }),
               ),
             )),
             Positioned(

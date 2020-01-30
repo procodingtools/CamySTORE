@@ -18,94 +18,87 @@ class _CommandsScreenState extends State<CommandsScreen> {
     return Stack(
       children: <Widget>[
         Positioned.fill(
-          child:
-              Opacity(opacity: .7, child: Image.asset("assets/commande.png")),
-        ),
-        Positioned.fill(
-            child: Opacity(
-          opacity: 1.0,
-          child: Scaffold(
-            body: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                MyAppBar(
-                  title: "Mes commande",
-                  actions: <Widget>[
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text("Total",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontFamily: 'Gotham',
-                                fontSize: 14.0)),
-                        Row(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              "152 020",
+            child: Scaffold(
+              body: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  MyAppBar(
+                    title: "Mes commande",
+                    actions: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text("Total",
                               style: TextStyle(
-                                  color: Values.greyedText,
+                                  color: Colors.black,
                                   fontFamily: 'Gotham',
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 19.0),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 2.0),
-                              child: Text(
-                                "DZD",
+                                  fontSize: 14.0)),
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                "152 020",
                                 style: TextStyle(
                                     color: Values.greyedText,
                                     fontFamily: 'Gotham',
-                                    fontSize: 11.0,
-                                    fontWeight: FontWeight.w600),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 19.0),
                               ),
-                            )
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: <Widget>[
-                        ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            return CommandItem();
-                          },
-                          itemCount: 3,
-                          padding: EdgeInsets.symmetric(
-                              vertical: 12.0, horizontal: 15.0),
-                          shrinkWrap: true,
-                        ),
-                        Padding(
-                          padding: EdgeInsets.only(top: Dimens.Height * .05, bottom: Dimens.Height * .1),
-                          child: MaterialButton(
-                            onPressed: () => print(''),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(500.0)),
-                            child: Text("Etape suivant".toUpperCase()),
-                            padding: EdgeInsets.symmetric(vertical: 15.0),
-                            textColor: Colors.white,
-                            color: Values.primaryColor,
-                            minWidth: Dimens.Width * .6,
+                              Padding(
+                                padding: const EdgeInsets.only(left: 2.0),
+                                child: Text(
+                                  "DZD",
+                                  style: TextStyle(
+                                      color: Values.greyedText,
+                                      fontFamily: 'Gotham',
+                                      fontSize: 11.0,
+                                      fontWeight: FontWeight.w600),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return CommandItem();
+                            },
+                            itemCount: 3,
+                            padding: EdgeInsets.symmetric(
+                                vertical: 12.0, horizontal: 15.0),
+                            shrinkWrap: true,
                           ),
-                        )
-                      ],
+                          Padding(
+                            padding: EdgeInsets.only(top: Dimens.Height * .05, bottom: Dimens.Height * .1),
+                            child: MaterialButton(
+                              onPressed: () => print(''),
+                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(500.0)),
+                              child: Text("Etape suivant".toUpperCase()),
+                              padding: EdgeInsets.symmetric(vertical: 15.0),
+                              textColor: Colors.white,
+                              color: Values.primaryColor,
+                              minWidth: Dimens.Width * .6,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-                BottomNav(
-                  selectedPage: 4,
-                )
-              ],
-            ),
-          ),
-        ))
+                  BottomNav(
+                    selectedPage: 4,
+                  )
+                ],
+              ),
+            ))
       ],
     );
   }
